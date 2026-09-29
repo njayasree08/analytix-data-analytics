@@ -1,0 +1,790 @@
+/* =========================================================
+   ANALYTIX - HISTORY PAGE
+========================================================= */
+
+.history-page {
+  width: 100%;
+}
+
+
+/* =========================================================
+   SUMMARY CARDS
+========================================================= */
+
+.history-summary {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+
+  margin-bottom: 22px;
+}
+
+.history-summary-card {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 17px 19px;
+
+  border: 1px solid #d9e2f1;
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #f7f9ff
+    );
+
+  box-shadow:
+    0 5px 18px
+      rgba(30, 64, 175, 0.06);
+}
+
+.history-summary-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 43px;
+  height: 43px;
+
+  flex: 0 0 auto;
+
+  border-radius: 12px;
+
+  background: #eef2ff;
+
+  color: #4f46e5;
+}
+
+.history-summary-icon.blue {
+  background: #eff6ff;
+
+  color: #2563eb;
+}
+
+.history-summary-icon.cyan {
+  background: #ecfeff;
+
+  color: #0891b2;
+}
+
+.history-summary-card div:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.history-summary-card span {
+  color: #7b8799;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+}
+
+.history-summary-card strong {
+  color: #172554;
+
+  font-size: 17px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   MAIN PANEL
+========================================================= */
+
+.history-panel {
+  overflow: hidden;
+
+  border: 1px solid #d7e1ef;
+  border-radius: 19px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 8px 28px
+      rgba(30, 64, 175, 0.07);
+}
+
+.history-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 24px 25px;
+
+  border-bottom: 1px solid #e4eaf3;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #f6f8ff
+    );
+}
+
+.history-kicker {
+  margin-bottom: 6px;
+
+  color: #4f46e5;
+
+  font-size: 9px;
+  font-weight: 850;
+
+  letter-spacing: 0.14em;
+}
+
+.history-panel-header h2 {
+  margin: 0;
+
+  color: #172554;
+
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.history-panel-header p {
+  margin: 6px 0 0;
+
+  color: #718096;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   REFRESH BUTTON
+========================================================= */
+
+.history-refresh-button {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  min-height: 38px;
+
+  padding: 0 13px;
+
+  border: 1px solid #d3deef;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #475569;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.history-refresh-button:hover {
+  border-color: #b9c8e8;
+
+  background: #eef2ff;
+
+  color: #4338ca;
+}
+
+.history-refresh-button:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.history-error {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin: 18px 22px 0;
+
+  padding: 12px 14px;
+
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+
+  background: #fff7f7;
+
+  color: #b91c1c;
+
+  font-size: 11px;
+  font-weight: 650;
+}
+
+
+/* =========================================================
+   DATASET LIST
+========================================================= */
+
+.history-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 11px;
+
+  padding: 18px 20px 21px;
+}
+
+
+/* =========================================================
+   DATASET CARD
+========================================================= */
+
+.history-dataset-card {
+  display: grid;
+
+  grid-template-columns:
+    auto
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 15px 16px;
+
+  border: 1px solid #e0e7f1;
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.history-dataset-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #c5d2e8;
+
+  box-shadow:
+    0 8px 22px
+      rgba(30, 64, 175, 0.08);
+}
+
+
+/* =========================================================
+   FILE ICON
+========================================================= */
+
+.history-file-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  border: 1px solid #cbd8f2;
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eef2ff,
+      #ecfeff
+    );
+
+  color: #4f46e5;
+}
+
+
+/* =========================================================
+   DATASET CONTENT
+========================================================= */
+
+.history-dataset-main {
+  min-width: 0;
+}
+
+.history-dataset-title-row {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  min-width: 0;
+}
+
+.history-dataset-title-row h3 {
+  overflow: hidden;
+
+  margin: 0;
+
+  color: #1e293b;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+.history-file-type {
+  flex: 0 0 auto;
+
+  padding: 4px 7px;
+
+  border-radius: 5px;
+
+  background: #eef2ff;
+
+  color: #4f46e5;
+
+  font-size: 8px;
+  font-weight: 850;
+
+  letter-spacing: 0.06em;
+}
+
+
+/* =========================================================
+   DATASET META
+========================================================= */
+
+.history-dataset-meta {
+  display: flex;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 14px;
+
+  margin-top: 7px;
+}
+
+.history-dataset-meta span {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 5px;
+
+  color: #7b8799;
+
+  font-size: 10px;
+}
+
+.history-dataset-meta svg {
+  color: #94a3b8;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.history-dataset-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+}
+
+.history-open-button {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  min-height: 34px;
+
+  padding: 0 12px;
+
+  border: 1px solid #cbd5f0;
+  border-radius: 8px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eef2ff,
+      #eff6ff
+    );
+
+  color: #4338ca;
+
+  font-size: 10px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.history-open-button:hover {
+  transform: translateY(-1px);
+
+  background:
+    linear-gradient(
+      135deg,
+      #e0e7ff,
+      #dbeafe
+    );
+}
+
+.history-delete-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  border: 1px solid #ead5d5;
+  border-radius: 8px;
+
+  background: #fffafa;
+
+  color: #dc2626;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.history-delete-button:hover {
+  border-color: #fecaca;
+
+  background: #fef2f2;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.history-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  min-height: 330px;
+
+  padding: 40px 20px;
+
+  text-align: center;
+}
+
+.history-empty-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 66px;
+  height: 66px;
+
+  margin-bottom: 15px;
+
+  border: 1px solid #d6def2;
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eef2ff,
+      #ecfeff
+    );
+
+  color: #4f46e5;
+}
+
+.history-empty h3 {
+  margin: 0;
+
+  color: #1e293b;
+
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.history-empty p {
+  max-width: 440px;
+
+  margin: 8px 0 18px;
+
+  color: #7b8799;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+.history-primary-button {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  min-height: 39px;
+
+  padding: 0 15px;
+
+  border: 1px solid #4338ca;
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4f46e5,
+      #2563eb
+    );
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 15px
+      rgba(37, 99, 235, 0.20);
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.history-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  min-height: 300px;
+
+  color: #4f46e5;
+
+  text-align: center;
+}
+
+.history-loading h3 {
+  margin: 13px 0 5px;
+
+  color: #1e293b;
+
+  font-size: 15px;
+}
+
+.history-loading p {
+  margin: 0;
+
+  color: #7b8799;
+
+  font-size: 11px;
+}
+
+.history-spin {
+  animation:
+    history-spin-animation 1s
+    linear infinite;
+}
+
+@keyframes history-spin-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   STORAGE INFO
+========================================================= */
+
+.history-info {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 12px;
+
+  margin-top: 18px;
+
+  padding: 15px 17px;
+
+  border: 1px solid #d9e4f3;
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8faff,
+      #f2fbff
+    );
+}
+
+.history-info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 35px;
+  height: 35px;
+
+  flex: 0 0 auto;
+
+  border-radius: 9px;
+
+  background: #e0f2fe;
+
+  color: #0284c7;
+}
+
+.history-info strong {
+  display: block;
+
+  color: #334155;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.history-info p {
+  margin: 4px 0 0;
+
+  color: #718096;
+
+  font-size: 10px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+  .history-summary {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .history-dataset-card {
+    grid-template-columns:
+      auto
+      minmax(0, 1fr);
+  }
+
+  .history-dataset-actions {
+    grid-column: 2;
+
+    justify-content: flex-start;
+  }
+}
+
+
+@media (max-width: 700px) {
+  .history-summary {
+    grid-template-columns:
+      1fr;
+  }
+
+  .history-panel-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .history-refresh-button {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .history-list {
+    padding: 14px;
+  }
+
+  .history-dataset-card {
+    grid-template-columns:
+      auto
+      minmax(0, 1fr);
+  }
+
+  .history-dataset-meta {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 5px;
+  }
+
+  .history-dataset-actions {
+    grid-column: 1 / -1;
+
+    width: 100%;
+  }
+
+  .history-open-button {
+    flex: 1;
+
+    justify-content: center;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .history-panel-header {
+    padding: 19px;
+  }
+
+  .history-dataset-card {
+    padding: 13px;
+  }
+
+  .history-file-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .history-dataset-title-row {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 5px;
+  }
+}
