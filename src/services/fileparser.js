@@ -3,16 +3,13 @@ import * as XLSX from "xlsx";
 
 export async function parseFile(file) {
   if (!file) {
-    throw new Error(
-      "No file selected."
-    );
+    throw new Error("No file selected.");
   }
 
-  const extension =
-    file.name
-      .split(".")
-      .pop()
-      .toLowerCase();
+  const extension = file.name
+    .split(".")
+    .pop()
+    .toLowerCase();
 
   if (
     !["csv", "xlsx", "xls"].includes(
@@ -31,18 +28,12 @@ export async function parseFile(file) {
   return parseExcel(file);
 }
 
-/* =========================================================
-   CSV
-========================================================= */
-
 function parseCSV(file) {
   return new Promise(
     (resolve, reject) => {
       Papa.parse(file, {
         header: true,
-
         skipEmptyLines: true,
-
         dynamicTyping: true,
 
         transformHeader: (header) =>
@@ -59,10 +50,11 @@ function parseCSV(file) {
             );
           }
 
-          const data =
-            Array.isArray(results.data)
-              ? results.data
-              : [];
+          const data = Array.isArray(
+            results.data
+          )
+            ? results.data
+            : [];
 
           const columns =
             results.meta?.fields || [];
@@ -79,15 +71,10 @@ function parseCSV(file) {
 
           resolve({
             fileName: file.name,
-
             fileType: "CSV",
-
             data,
-
             columns,
-
             rowCount: data.length,
-
             columnCount:
               columns.length,
           });
@@ -104,10 +91,6 @@ function parseCSV(file) {
     }
   );
 }
-
-/* =========================================================
-   EXCEL
-========================================================= */
 
 async function parseExcel(file) {
   try {
@@ -167,20 +150,14 @@ async function parseExcel(file) {
 
     return {
       fileName: file.name,
-
       fileType:
         extensionToType(file.name),
-
       sheetName,
-
       data,
-
       columns,
-
       rowCount: data.length,
-
-      columnCount: columns.length,
-
+      columnCount:
+        columns.length,
       availableSheets:
         workbook.SheetNames,
     };
@@ -192,18 +169,11 @@ async function parseExcel(file) {
   }
 }
 
-/* =========================================================
-   HELPERS
-========================================================= */
-
-function extensionToType(
-  fileName
-) {
-  const extension =
-    fileName
-      .split(".")
-      .pop()
-      .toLowerCase();
+function extensionToType(fileName) {
+  const extension = fileName
+    .split(".")
+    .pop()
+    .toLowerCase();
 
   return extension === "xls"
     ? "XLS"
@@ -235,9 +205,7 @@ function getWorksheetColumns(
       worksheet[cellAddress];
 
     if (cell?.v !== undefined) {
-      columns.push(
-        String(cell.v)
-      );
+      columns.push(String(cell.v));
     }
   }
 
